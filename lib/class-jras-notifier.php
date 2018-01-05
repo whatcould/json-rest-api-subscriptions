@@ -108,6 +108,10 @@ class JRAS_Notifier {
 			'type'         => $post->post_type,
 			'link'         => $post->permalink,
 			'author'       => $post->author,
+			'menu_order'   => $post->menu_order,
+			'metadata'     => get_metadata('post', $post->ID),
+			'parent_id'    =>  $post->post_parent,
+			'featured_image' => get_the_post_thumbnail($post->ID, 'post-thumbnail'),
 		);
 
 		wp_reset_postdata();
