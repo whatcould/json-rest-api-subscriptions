@@ -40,6 +40,9 @@ class JRAS_Listener {
 		$deleted_posts[ $post->ID ] = $post;
 
 		update_option( 'jras_deleted_posts', $deleted_posts );
+
+    // Notify immediately
+    JRAS_Notifier::factory()->notify();
 	}
 
 	/**
@@ -115,6 +118,8 @@ class JRAS_Listener {
 				update_option( 'jras_deleted_posts', $deleted_posts );
 			}
 		}
+    // Notify immediately
+    JRAS_Notifier::factory()->notify();
 	}
 
 	/**
