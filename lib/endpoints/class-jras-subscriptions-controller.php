@@ -42,6 +42,7 @@ class JRAS_Subscriptions_Controller extends WP_REST_Controller {
 					'events' => array(
 						'description'        => esc_html__( 'Event(s) to subscribe to.', 'json-rest-api-subscriptions' ),
 						'type'               => 'array',
+						'items'              => array('type' => 'string'),
 						'sanitize_callback'  => 'rest_sanitize_request_arg',
 						'validate_callback'  => 'rest_validate_request_arg',
 						'required'           => true,
@@ -63,6 +64,7 @@ class JRAS_Subscriptions_Controller extends WP_REST_Controller {
 					'events' => array(
 						'description'        => esc_html__( 'Event(s) to subscribe to.', 'json-rest-api-subscriptions' ),
 						'type'               => 'array',
+						'items'              => array('type' => 'string'),
 						'sanitize_callback'  => 'rest_sanitize_request_arg',
 						'validate_callback'  => 'rest_validate_request_arg',
 						'required'           => true,
@@ -569,6 +571,7 @@ class JRAS_Subscriptions_Controller extends WP_REST_Controller {
 				'events' => array(
 					'description' => esc_html__( 'List of events to subscribe to.' ),
 					'type'        => 'array',
+					'items'       => array('type' => 'string'),
 					'context'     => array( 'edit' ),
 					'readonly'    => false,
 				),
